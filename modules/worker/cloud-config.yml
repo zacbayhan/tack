@@ -31,6 +31,7 @@ coreos:
         - name: 10-environment.conf
           content: |
             [Service]
+            Environment="ETCD_IMAGE_TAG=v3.1.11"
             Environment="ETCD_SSL_DIR=/etc/kubernetes/ssl"
             Environment="ETCD_CERT_FILE=/etc/ssl/certs/k8s-worker.pem"
             Environment="ETCD_CLIENT_CERT_AUTH=TRUE"

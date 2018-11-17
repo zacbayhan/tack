@@ -17,7 +17,9 @@ variable "cidr" {
     vpc = "10.0.0.0/16"
   }
 }
-variable "cluster-domain" { default = "cluster.local" }
+variable "cluster-domain" {
+                default = "cluster.local"
+              }
 variable "coreos-aws" {
   default = {
     ami = ""
@@ -25,14 +27,16 @@ variable "coreos-aws" {
     type = ""
   }
 }
-variable "dns-service-ip" { default = "10.3.0.10" }
+variable "dns-service-ip" {
+                default = "10.3.0.10"
+              }
 variable "etcd-ips" { default = "10.0.10.10,10.0.10.11,10.0.10.12" }
 variable "instance-type" {
   default = {
-    bastion = "t2.nano"
-    pki = "t2.nano"
-    etcd = "m3.large"
-    worker = "m3.large"
+    bastion = "t2.micro"
+    pki = "t2.micro"
+    etcd = "m5.large"
+    worker = "m5.large"
   }
 }
 variable "internal-tld" {}
@@ -42,7 +46,9 @@ variable "k8s" {
     hyperkube-tag = "v1.5.1_coreos.0"
   }
 }
-variable "k8s-service-ip" { default = "10.3.0.1" }
+variable "k8s-service-ip" {
+              default = "10.3.0.1"
+            }
 variable "name" {}
 variable "pki-ip" {}
 variable "s3-bucket" {}

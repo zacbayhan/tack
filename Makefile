@@ -22,10 +22,10 @@ export DIR_KUBECONFIG := .kube
 
 # ∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨
 
-export AWS_REGION           ?= us-west-2
+export AWS_REGION           ?= us-east-1
 export COREOS_CHANNEL       ?= stable
 export COREOS_VM_TYPE       ?= hvm
-export CLUSTER_NAME         ?= test
+export CLUSTER_NAME         ?= stinkydog
 
 export AWS_EC2_KEY_NAME     ?= kz8s-$(CLUSTER_NAME)
 export AWS_EC2_KEY_PATH     := ${DIR_KEY_PAIR}/${AWS_EC2_KEY_NAME}.pem
@@ -91,12 +91,12 @@ post-terraform:
 
 ## destroy and remove everything
 clean: delete-addons destroy delete-keypair
-	@-pkill -f "kubectl proxy" ||:
 	@-rm terraform.tfvars ||:
 	@-rm terraform.tfplan ||:
 	@-rm -rf .terraform ||:
 	@-rm -rf tmp ||:
 	@-rm -rf ${DIR_SSL} ||:
+	@-pkill -f "kubectl proxy" ||:
 
 ## create kube-system addons
 create-addons:
