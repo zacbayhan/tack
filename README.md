@@ -2,6 +2,8 @@
 
 [![Circle CI](https://circleci.com/gh/kz8s/tack.svg?style=svg)](https://circleci.com/gh/kz8s/tack)
 
+## Tested to work with kubectl v1.9
+
 Opinionated [Terraform](https://terraform.io) module for creating a Highly Available [Kubernetes](http://kubernetes.io) cluster running on
 [Container Linux by CoreOS](https://coreos.com) (any channel) in an [AWS
 Virtual Private Cloud VPC](https://aws.amazon.com/vpc/). With prerequisites
